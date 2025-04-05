@@ -3080,30 +3080,9 @@ h6 {
   gap: 10px;
   justify-content: center;
   margin-bottom: 30px;
-}
-
-.projects_fillter ul.filter.list li a {
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: #f5f7fa;
-  font-weight: 500;
-  color: #555;
-  transition: background 0.3s ease;
-}
-
-.projects_fillter ul.filter.list li.active a,
-.projects_fillter ul.filter.list li a:hover {
-  background: linear-gradient(90deg, #62bdfc, #8490ff);
-  color: #fff;
-}
-.projects_fillter ul.filter.list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 30px;
   padding: 0;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .projects_fillter ul.filter.list li {
@@ -3122,8 +3101,22 @@ h6 {
   white-space: nowrap;
 }
 
-/* On small screens, stack the filter buttons */
-@media (max-width: 480px) {
+.projects_fillter ul.filter.list li.active a,
+.projects_fillter ul.filter.list li a:hover {
+  background: linear-gradient(90deg, #62bdfc, #8490ff);
+  color: #fff;
+}
+
+/* 📱 Mobile-specific styles */
+@media (max-width: 768px) {
+  .projects_item {
+    margin-bottom: 20px;
+  }
+
+  .projects_item:last-child {
+    margin-bottom: 0;
+  }
+
   .projects_fillter ul.filter.list {
     flex-direction: column;
     align-items: center;
@@ -3134,6 +3127,7 @@ h6 {
     max-width: 250px;
   }
 }
+
 /*============================================================================================ */
 /* Portfolio Details Area css
 ============================================================================================ */
