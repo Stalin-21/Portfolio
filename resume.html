@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume | Stalin Gunasekaran</title>
+  <style>
+    :root {
+      --primary: #62bdfc;
+      --secondary: #8490ff;
+      --hover: #5caee4;
+      --font: 'Poppins', sans-serif;
+      --bg: linear-gradient(to right, #f0f8ff, #e6f0ff);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      width: 100%;
+      padding: 20px 40px;
+      background-color: var(--primary);
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar a {
+      text-decoration: none;
+      background-color: white;
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 2px solid white;
+    }
+
+    .topbar a:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .resume-wrapper {
+      width: 90%;
+      max-width: 1100px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.7s ease;
+    }
+
+    .resume-frame {
+      width: 100%;
+      height: 85vh;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+    }
+
+    .bottom-actions {
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      background: var(--secondary);
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(132, 144, 255, 0.3);
+    }
+
+    .btn:hover {
+      background-color: var(--hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(132, 144, 255, 0.5);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .resume-frame {
+        height: 75vh;
+      }
+
+      .topbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .bottom-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div>📄Resume</div>
+    <a href="index.html">← Back to Portfolio</a>
+  </div>
+
+  <div class="resume-wrapper">
+    <embed src="assets/resume.pdf" type="application/pdf" class="resume-frame">
+
+    <div class="bottom-actions">
+      <a href="assets/resume.pdf" download class="btn">⬇️ Download Resume</a>
+      <a href="assets/resume.pdf" target="_blank" class="btn">🔍 View in New Tab</a>
+    </div>
+  </div>
+
+</body>
+</html>

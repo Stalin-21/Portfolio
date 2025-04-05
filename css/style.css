@@ -3025,157 +3025,115 @@ h6 {
 ============================================================================================ */
 /*---------------------------------------------------- */
 /* 🔹 Projects Area */
-.projects_area {
-  padding: 70px 0;
-  background-color: #fff;
-}
-
-/* 🔹 Main Title */
-.main_title {
-  text-align: center;
-  margin-bottom: 50px;
-  color: #222;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-/* 🔹 Category Filters */
-.projects_fillter {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.projects_fillter .filter {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-  flex-wrap: wrap;
-}
-
-.projects_fillter .filter li {
-  cursor: pointer;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease;
-  color: #333;
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.projects_fillter .filter li.active,
-.projects_fillter .filter li:hover {
-  background: linear-gradient(to right, #62bdfc, #8490ff);
-  color: #fff;
-  transform: scale(1.1);
-}
-
-/* 🔹 Project Grid */
-.projects_inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px; /* FIXED: Increased spacing */
-  justify-content: center;
-}
-
-/* 🔹 Individual Project Item */
 .projects_item {
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
-  background: #f9f9f9;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 32%;
-  min-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* 🔹 Hover Effects */
-.projects_item:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+.projects_item img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.projects_text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  color: #fff;
+  transition: all 0.4s ease;
+  transform: translateY(40%);
+  opacity: 0;
+}
+
+.projects_item:hover img {
   transform: scale(1.05);
 }
 
-/* 🔹 Image Overlay */
-.projects_item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.05) 80%);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.projects_item:hover::after {
-  opacity: 1;
-}
-
-/* 🔹 Project Title */
-.projects_text {
-  position: absolute;
-  bottom: 12px;
-  left: 10px;
-  right: 10px;
-  background: rgba(255, 255, 255, 0.85);
-  color: #111;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
 .projects_item:hover .projects_text {
-  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects_text h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #00c6ff; /* Updated title color */
+}
+
+.projects_text p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.projects_fillter ul.filter.list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.projects_fillter ul.filter.list li a {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #f5f7fa;
+  font-weight: 500;
+  color: #555;
+  transition: background 0.3s ease;
+}
+
+.projects_fillter ul.filter.list li.active a,
+.projects_fillter ul.filter.list li a:hover {
+  background: linear-gradient(90deg, #62bdfc, #8490ff);
   color: #fff;
 }
-
-.projects_text a {
-  color: #62bdfc;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
+.projects_fillter ul.filter.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
 }
 
-.projects_text a:hover {
-  text-decoration: underline;
-  color: #8490ff;
+.projects_fillter ul.filter.list li {
+  flex: 1 1 auto;
+  text-align: center;
 }
 
-/* 🔹 Responsive Fixes */
-@media (max-width: 992px) {
-  .projects_inner {
-    justify-content: space-around;
-  }
-
-  .projects_item {
-    width: 45%; /* 2 items per row on tablets */
-  }
+.projects_fillter ul.filter.list li a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #f5f7fa;
+  font-weight: 500;
+  color: #555;
+  transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-  .projects_inner {
+/* On small screens, stack the filter buttons */
+@media (max-width: 480px) {
+  .projects_fillter ul.filter.list {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
   }
 
-  .projects_item {
+  .projects_fillter ul.filter.list li {
     width: 100%;
-    margin-bottom: 20px; /* FIXED: Added gap */
-  }
-
-  .projects_fillter .filter {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .projects_fillter .filter li {
-    padding: 6px 12px;
+    max-width: 250px;
   }
 }
-
 /*============================================================================================ */
 /* Portfolio Details Area css
 ============================================================================================ */
